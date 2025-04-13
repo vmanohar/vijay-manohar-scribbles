@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
@@ -46,19 +45,13 @@ const About = () => {
         
         <div className="space-y-4 text-lg">
           <p className={`transition-all duration-500 delay-100 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            I care about clean inputs—whether that's what goes into your body, your routine, or your thinking. That means food and supplements that are actually tested and transparent, systems that reduce friction, and mental models that help you move through life with more clarity and less noise.
+            Hey, I'm Vijay. I work at Light Labs. I now call Austin, Texas home after a few years living nomadically.
           </p>
           <p className={`transition-all duration-500 delay-200 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            I'm especially into transparent, tested CPG brands and rethinking education to actually prepare the next generation through new kinds of schools.
+            I'm big on clean inputs—what I eat, how I spend my time, and the information I take in. That mindset shapes what I do: I'm drawn to projects that make everyday life better, especially transparent, well-tested food brands.
           </p>
           <p className={`transition-all duration-500 delay-300 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            I'm into HYROX, bodybuilding, and multi-day hikes that leave me questioning what I signed up for. I meditate and spend a lot of time exploring mindfulness and how to stay grounded.
-          </p>
-          <p className={`transition-all duration-500 delay-400 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            I used to be a full-time nomad. Now I'm settled in Austin, TX and always on the lookout for great products. I get weirdly excited when I find a new brand I love.
-          </p>
-          <p className={`transition-all duration-500 delay-500 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            Also, I tried stand-up once. It was chaotic and great. I'd do it again.
+            Outside of work, you'll usually find me experimenting in the kitchen. I train for HYROX, play tennis and padel, lift, and occasionally take on multi-day hikes. I'm also interested in meditation and mindfulness.
           </p>
         </div>
         
