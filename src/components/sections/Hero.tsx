@@ -37,7 +37,7 @@ const Hero = () => {
         </h1>
         
         <p className="text-sm md:text-base text-muted-foreground mb-4 max-w-md animate-fade-in">
-          Writer, creator, and curious mind exploring the intersections of technology and everyday life.
+          Into mindfulness, movement, and figuring out better ways to eat, learn, and live.
         </p>
         
         {/* Social Links */}

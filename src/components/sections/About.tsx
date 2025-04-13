@@ -2,8 +2,16 @@
 import React from 'react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
-const TimelineItem = ({ year, title, description }: { year: string; title: string; description: string }) => {
+const TimelineItem = ({ year, title, description, link }: { year: string; title: string; description: string; link?: string }) => {
   const { ref, hasIntersected } = useIntersectionObserver({ threshold: 0.2 });
+  
+  const titleContent = link ? (
+    <a href={link} target="_blank" rel="noopener noreferrer" className="text-xl font-medium mb-2 hover:text-accent transition-colors duration-300">
+      {title}
+    </a>
+  ) : (
+    <h3 className="text-xl font-medium mb-2">{title}</h3>
+  );
 
   return (
     <div 
@@ -15,7 +23,7 @@ const TimelineItem = ({ year, title, description }: { year: string; title: strin
           <span className="text-sm font-medium text-primary">{year}</span>
         </div>
         <div className="md:w-3/4">
-          <h3 className="text-xl font-medium mb-2">{title}</h3>
+          {titleContent}
           <p className="text-muted-foreground">{description}</p>
         </div>
       </div>
@@ -38,7 +46,7 @@ const About = () => {
         
         <div className="space-y-6 mb-12">
           <p className={`text-lg transition-all duration-500 delay-100 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            I care about clean inputs—whether that's what goes into your body, your routine, or your thinking. That means food and supplements that are actually tested and transparent, not just well-branded. Systems that reduce friction. And mental frameworks that help you move through life with more clarity and less noise.
+            I care about clean inputs—whether that's what goes into your body, your routine, or your thinking. That means food and supplements that are actually tested and transparent, not just well-branded. Systems that reduce friction. And mental models that help you move through life with more clarity and less noise.
           </p>
           <p className={`text-lg transition-all duration-500 delay-200 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             I'm especially into transparent, tested CPG brands and rethinking education to actually prepare the next generation through new kinds of schools.
@@ -63,6 +71,7 @@ const About = () => {
             year="2024" 
             title="Light Labs, Co-founder" 
             description="My life's work -- building a healthier food system through lab testing."
+            link="https://lightlabs.com"
           />
           <TimelineItem 
             year="2023 - 2024" 
@@ -71,8 +80,9 @@ const About = () => {
           />
           <TimelineItem 
             year="2018 - 2023" 
-            title="Samsara, growth and GTM" 
+            title="Samsara, Growth and GTM" 
             description="The best education I could have asked for, along for the ride from startup to IPO ($IOT). Lived all over LATAM and Europe."
+            link="https://samsara.com"
           />
           <TimelineItem 
             year="2013 - 2017" 
