@@ -27,38 +27,29 @@ const Navbar = () => {
   return (
     <header 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 right-0 z-50 transition-all duration-300 md:w-auto md:left-auto",
         isScrolled ? "bg-background/80 backdrop-blur-md py-3 shadow-sm" : "bg-transparent py-4"
       )}
     >
-      <div className="container-width flex justify-between items-center">
-        <div className="flex items-center">
-          <a href="#top" className="text-lg font-serif">Vijay Manohar</a>
+      <div className="container-width flex justify-end items-center md:px-4">
+        {/* Dark mode toggle is always visible */}
+        <div className="hidden md:flex items-center space-x-2 mr-4">
+          <Switch
+            id="dark-mode"
+            checked={theme === 'dark'}
+            onCheckedChange={toggleTheme}
+            aria-label="Toggle dark mode"
+          />
         </div>
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <a href="#about" className="text-sm hover:text-primary transition-colors">About</a>
-          <a href="#writing" className="text-sm hover:text-primary transition-colors">Writing</a>
-          <a href="#contact" className="text-sm hover:text-primary transition-colors">Contact</a>
-          <div className="flex items-center space-x-2">
-            <Label htmlFor="dark-mode">Dark Mode</Label>
-            <Switch
-              id="dark-mode"
-              checked={theme === 'dark'}
-              onCheckedChange={toggleTheme}
-            />
-          </div>
-        </nav>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center space-x-4">
           <div className="flex items-center space-x-2">
-            <Label htmlFor="dark-mode-mobile" className="sr-only">Dark Mode</Label>
             <Switch
               id="dark-mode-mobile"
               checked={theme === 'dark'}
               onCheckedChange={toggleTheme}
+              aria-label="Toggle dark mode"
             />
           </div>
           <button 
