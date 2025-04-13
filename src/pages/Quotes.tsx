@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -214,12 +213,6 @@ A friend? What is a friend? Just one, I repeat, with whom you dare to be yoursel
               />
             ))}
           </div>
-        </div>
-      </div>
-      
-      <div className="py-8 text-center text-sm text-muted-foreground border-t">
-        <div className="container-width">
-          <p>Caffeinated into existence at <a href="https://www.palominocoffee.com/" target="_blank" rel="noopener noreferrer" className="link-hover">Palomino Cafe</a> in Austin, TX</p>
         </div>
       </div>
       
