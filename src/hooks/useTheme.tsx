@@ -41,19 +41,17 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     // Apply transition class to all elements
     document.documentElement.classList.add('theme-transitioning');
     
-    // Toggle theme after a short delay to allow animation to start
+    // Toggle theme immediately to reduce latency
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+    
+    // Remove transition class after a shorter animation completes
     setTimeout(() => {
-      const newTheme = theme === 'light' ? 'dark' : 'light';
-      setTheme(newTheme);
-      localStorage.setItem('theme', newTheme);
-      document.documentElement.classList.toggle('dark', newTheme === 'dark');
-      
-      // Remove transition class after animation completes
-      setTimeout(() => {
-        document.documentElement.classList.remove('theme-transitioning');
-        setIsTransitioning(false);
-      }, 500);
-    }, 50);
+      document.documentElement.classList.remove('theme-transitioning');
+      setIsTransitioning(false);
+    }, 200); // Reduced from 500ms to 200ms
   };
 
   return (

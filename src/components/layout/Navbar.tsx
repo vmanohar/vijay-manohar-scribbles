@@ -1,10 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { useTheme } from '@/hooks/useTheme';
-import { Sun, Moon } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Toggle } from "@/components/ui/toggle";
+import { Switch } from "@/components/ui/switch";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,45 +25,31 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Enhanced dark mode toggle - Always visible */}
+      {/* Regular switch for dark mode toggle - Always visible */}
       <div 
         className={cn(
-          "fixed top-4 right-4 z-50 p-1.5 rounded-full bg-background/80 backdrop-blur-md shadow-md transition-all duration-300",
+          "fixed top-4 right-4 z-50 p-2 rounded-full bg-background/80 backdrop-blur-md shadow-md transition-all duration-200",
           theme === 'dark' 
             ? "border border-white/20 shadow-white/10" 
             : "border border-black/10 shadow-black/5"
         )}
       >
-        <Toggle
-          pressed={theme === 'dark'}
-          onPressedChange={toggleTheme}
-          aria-label="Toggle dark mode"
-          className="relative h-10 w-10 rounded-full border-none data-[state=on]:bg-transparent data-[state=off]:bg-transparent outline-none ring-0"
-        >
-          <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-            {theme === 'dark' ? (
-              <Moon className="h-5 w-5 text-highlight-dark absolute transition-all duration-500 rotate-0 scale-100" />
-            ) : (
-              <Sun className="h-5 w-5 text-amber-500 absolute transition-all duration-500 rotate-0 scale-100" />
-            )}
-
-            {/* Hidden icon for transition animation */}
-            <Moon className={cn(
-              "h-5 w-5 text-highlight-dark absolute transition-all duration-500",
-              theme === 'dark' ? "rotate-0 scale-100" : "rotate-90 scale-0 opacity-0"
-            )} />
-            <Sun className={cn(
-              "h-5 w-5 text-amber-500 absolute transition-all duration-500",
-              theme === 'light' ? "rotate-0 scale-100" : "-rotate-90 scale-0 opacity-0"
-            )} />
-          </div>
-        </Toggle>
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-medium">
+            {theme === 'light' ? 'Light' : 'Dark'}
+          </span>
+          <Switch
+            checked={theme === 'dark'}
+            onCheckedChange={toggleTheme}
+            aria-label="Toggle dark mode"
+          />
+        </div>
       </div>
 
       {/* Mobile Nav */}
       <header 
         className={cn(
-          "fixed top-0 right-0 z-50 transition-all duration-300 md:w-auto md:left-auto md:hidden",
+          "fixed top-0 right-0 z-50 transition-all duration-200 md:w-auto md:left-auto md:hidden",
           isScrolled ? "bg-background/80 backdrop-blur-md py-3 shadow-sm" : "bg-transparent py-4"
         )}
       >
