@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { useTheme } from '@/hooks/useTheme';
-import { Switch } from "@/components/ui/switch";
-import { Moon, Sun } from 'lucide-react';
+import { Sun, Moon } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Toggle } from "@/components/ui/toggle";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,23 +27,39 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Dark mode toggle - Always visible */}
+      {/* Enhanced dark mode toggle - Always visible */}
       <div 
         className={cn(
-          "fixed top-4 right-4 z-50 flex items-center space-x-2 p-2 rounded-full bg-background/80 backdrop-blur-md shadow-sm",
-          theme === 'dark' ? "border border-white/50 text-white" : "border"
+          "fixed top-4 right-4 z-50 p-1.5 rounded-full bg-background/80 backdrop-blur-md shadow-md transition-all duration-300",
+          theme === 'dark' 
+            ? "border border-white/20 shadow-white/10" 
+            : "border border-black/10 shadow-black/5"
         )}
       >
-        <Switch
-          id="dark-mode-fixed"
-          checked={theme === 'dark'}
-          onCheckedChange={toggleTheme}
+        <Toggle
+          pressed={theme === 'dark'}
+          onPressedChange={toggleTheme}
           aria-label="Toggle dark mode"
-        />
-        {theme === 'dark' ? 
-          <Moon className="w-5 h-5" /> : 
-          <Sun className="w-5 h-5" />
-        }
+          className="relative h-10 w-10 rounded-full border-none data-[state=on]:bg-transparent data-[state=off]:bg-transparent outline-none ring-0"
+        >
+          <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+            {theme === 'dark' ? (
+              <Moon className="h-5 w-5 text-highlight-dark absolute transition-all duration-500 rotate-0 scale-100" />
+            ) : (
+              <Sun className="h-5 w-5 text-amber-500 absolute transition-all duration-500 rotate-0 scale-100" />
+            )}
+
+            {/* Hidden icon for transition animation */}
+            <Moon className={cn(
+              "h-5 w-5 text-highlight-dark absolute transition-all duration-500",
+              theme === 'dark' ? "rotate-0 scale-100" : "rotate-90 scale-0 opacity-0"
+            )} />
+            <Sun className={cn(
+              "h-5 w-5 text-amber-500 absolute transition-all duration-500",
+              theme === 'light' ? "rotate-0 scale-100" : "-rotate-90 scale-0 opacity-0"
+            )} />
+          </div>
+        </Toggle>
       </div>
 
       {/* Mobile Nav */}
