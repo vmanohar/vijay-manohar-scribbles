@@ -39,11 +39,11 @@ const About = () => {
         <div className="space-y-6 mb-12">
           <p className={`text-lg transition-all duration-500 delay-100 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             I'm Vijay, a writer and curious observer with interests spanning technology, culture, and human behavior. 
-            My work explores how we interact with the digital world and how those interactions shape our lives.
+            My work explores how we interact with the <a href="#" className="link-hover">digital world</a> and how those interactions shape our lives.
           </p>
           <p className={`text-lg transition-all duration-500 delay-200 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             When I'm not writing, you might find me hiking in the mountains, experimenting with new recipes, 
-            or losing myself in a good book. I believe in continuous learning and approaching life with an open mind.
+            or losing myself in a <a href="#" className="link-hover">good book</a>. I believe in continuous learning and approaching life with an open mind.
           </p>
         </div>
         
@@ -79,7 +79,7 @@ const About = () => {
           <ul className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-4">
             <li className="flex items-start">
               <span className="text-primary mr-2">•</span>
-              <span>Thoughtful technology</span>
+              <span>Thoughtful <a href="#" className="link-hover">technology</a></span>
             </li>
             <li className="flex items-start">
               <span className="text-primary mr-2">•</span>
@@ -87,7 +87,7 @@ const About = () => {
             </li>
             <li className="flex items-start">
               <span className="text-primary mr-2">•</span>
-              <span>Long-form stories</span>
+              <span>Long-form <a href="#" className="link-hover">stories</a></span>
             </li>
             <li className="flex items-start">
               <span className="text-primary mr-2">•</span>
@@ -99,7 +99,7 @@ const About = () => {
             </li>
             <li className="flex items-start">
               <span className="text-primary mr-2">•</span>
-              <span>Community building</span>
+              <span><a href="#" className="link-hover">Community</a> building</span>
             </li>
           </ul>
         </div>

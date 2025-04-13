@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -87,6 +88,7 @@
 
   .link-hover {
     @apply relative inline-block text-primary underline underline-offset-4 hover:text-primary/80 transition-colors duration-300;
+    text-decoration-thickness: 2px;
   }
 
   .fade-in-section {
