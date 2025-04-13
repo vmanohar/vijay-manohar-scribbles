@@ -46,19 +46,19 @@ const About = () => {
         
         <div className="space-y-4 text-lg">
           <p className={`transition-all duration-500 delay-100 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            I care about clean inputs—whether that's what goes into your body, your routine, or your thinking. That means food and supplements that are actually tested and transparent, not just well-branded.
+            I care about clean inputs—whether that's what goes into your body, your routine, or your thinking. That means food and supplements that are actually tested and transparent, systems that reduce friction, and mental models that help you move through life with more clarity and less noise.
           </p>
           <p className={`transition-all duration-500 delay-200 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            I focus on systems that reduce friction and mental models that help you move through life with more clarity and less noise.
+            I'm especially into transparent, tested CPG brands and rethinking education to actually prepare the next generation through new kinds of schools.
           </p>
           <p className={`transition-all duration-500 delay-300 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            I'm especially passionate about transparent, tested CPG brands and rethinking education to actually prepare the next generation through innovative school models.
+            I'm into HYROX, bodybuilding, and multi-day hikes that leave me questioning what I signed up for. I meditate and spend a lot of time exploring mindfulness and how to stay grounded.
           </p>
           <p className={`transition-all duration-500 delay-400 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            My interests span HYROX, bodybuilding, and multi-day hikes that challenge my limits. I'm deeply committed to meditation and exploring mindfulness to stay grounded.
+            I used to be a full-time nomad. Now I'm settled in Austin, TX and always on the lookout for great products. I get weirdly excited when I find a new brand I love.
           </p>
           <p className={`transition-all duration-500 delay-500 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            I used to be a full-time nomad. Now I'm settled in Austin, TX, always excited about brands that get things right. And yes, I tried stand-up comedy once—it was chaotic and great. I'd do it again.
+            Also, I tried stand-up once. It was chaotic and great. I'd do it again.
           </p>
         </div>
         
