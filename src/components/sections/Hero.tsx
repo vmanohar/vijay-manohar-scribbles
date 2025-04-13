@@ -4,9 +4,9 @@ import { ArrowDown } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="top" className="h-screen flex flex-col justify-center items-center pt-16">
+    <section id="top" className="min-h-[80vh] flex flex-col justify-center items-center pt-10">
       <div className="container-width flex flex-col items-center text-center">
-        <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-8 animate-fade-in">
+        <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden mb-6 animate-fade-in">
           <img 
             src="/placeholder.svg" 
             alt="Vijay Manohar" 
@@ -15,17 +15,17 @@ const Hero = () => {
           />
         </div>
         
-        <h1 className="text-3xl md:text-4xl font-serif mb-4 animate-fade-in">
+        <h1 className="text-2xl md:text-3xl font-serif mb-3 animate-fade-in">
           Vijay Manohar
         </h1>
         
-        <p className="text-lg md:text-xl text-muted-foreground mb-6 max-w-lg animate-fade-in">
+        <p className="text-base md:text-lg text-muted-foreground mb-4 max-w-lg animate-fade-in">
           Writer, creator, and curious mind exploring the intersections of technology and everyday life.
         </p>
         
         <a 
           href="#about" 
-          className="flex items-center justify-center w-10 h-10 rounded-full border animate-fade-in hover:border-primary transition-colors duration-300 mt-12"
+          className="flex items-center justify-center w-8 h-8 rounded-full border animate-fade-in hover:border-primary transition-colors duration-300 mt-8"
           aria-label="Scroll to About section"
         >
           <ArrowDown className="w-4 h-4" />

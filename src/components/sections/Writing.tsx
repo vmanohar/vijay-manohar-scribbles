@@ -17,7 +17,7 @@ const WritingItem = ({ title, description, link, date, platform }: WritingItemPr
   return (
     <div 
       ref={ref as React.RefObject<HTMLDivElement>} 
-      className={`mb-8 pb-8 border-b last:border-0 transition-all duration-500 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+      className={`mb-6 pb-6 border-b last:border-0 transition-all duration-500 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
     >
       <div className="flex flex-col md:flex-row md:items-start">
         <div className="md:w-1/4 mb-2 md:mb-0">
@@ -47,26 +47,26 @@ const Writing = () => {
   const { ref: sectionRef, hasIntersected } = useIntersectionObserver();
 
   return (
-    <section id="writing" className="py-20">
+    <section id="writing" className="py-16">
       <div className="container-width">
         <h2 
           ref={sectionRef as React.RefObject<HTMLHeadingElement>} 
-          className={`text-2xl md:text-3xl font-serif mb-12 transition-opacity duration-500 ${hasIntersected ? 'opacity-100' : 'opacity-0'}`}
+          className={`text-2xl md:text-3xl font-serif mb-8 transition-opacity duration-500 ${hasIntersected ? 'opacity-100' : 'opacity-0'}`}
         >
           Writing
         </h2>
         
-        <div className="mt-8">
+        <div className="mt-6">
           <WritingItem 
             title="The Slow Internet Movement" 
-            description="Exploring the growing desire for more thoughtful, less overwhelming digital experiences in our hyper-connected world."
+            description="Exploring the growing desire for more thoughtful, less overwhelming digital experiences."
             link="https://substack.com" 
             date="May 2024"
             platform="Substack"
           />
           <WritingItem 
             title="Digital Minimalism in Practice" 
-            description="How reducing your digital footprint can lead to more meaningful technology use and improved wellbeing."
+            description="How reducing your digital footprint can lead to more meaningful technology use."
             link="https://medium.com" 
             date="February 2024"
             platform="Medium"
