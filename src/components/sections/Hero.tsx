@@ -37,7 +37,7 @@ const Hero = () => {
         </h1>
         
         <p className="text-sm md:text-base text-muted-foreground mb-4 max-w-md animate-fade-in">
-          Cofounder at <a href="https://www.lightlabs.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">Light Labs</a>. Into movement, mindfulness, and figuring out better ways to consume, create, learn, and live
+          Cofounder at <a href="https://www.lightlabs.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">Light Labs</a>. Into movement, mindfulness, and figuring out better ways to consume, create, learn, and live.
         </p>
         
         {/* Social Links */}
