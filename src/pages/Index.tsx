@@ -6,6 +6,7 @@ import Hero from '@/components/sections/Hero';
 import About from '@/components/sections/About';
 import Writing from '@/components/sections/Writing';
 import Contact from '@/components/sections/Contact';
+import { useTheme } from '@/hooks/useTheme';
 
 const Index = () => {
   useEffect(() => {
@@ -28,8 +29,10 @@ const Index = () => {
     };
   }, []);
 
+  const { theme } = useTheme();
+
   return (
-    <main className="min-h-screen">
+    <main className={`min-h-screen ${theme}`}>
       <Navbar />
       <Hero />
       <About />

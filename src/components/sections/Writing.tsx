@@ -1,6 +1,7 @@
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { ExternalLink } from 'lucide-react';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 interface WritingItemProps {
   title: string;
@@ -11,30 +12,13 @@ interface WritingItemProps {
 }
 
 const WritingItem = ({ title, description, link, date, platform }: WritingItemProps) => {
-  const itemRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    if (itemRef.current) {
-      observer.observe(itemRef.current);
-    }
-
-    return () => {
-      if (itemRef.current) {
-        observer.unobserve(itemRef.current);
-      }
-    };
-  }, []);
+  const { ref, hasIntersected } = useIntersectionObserver({ threshold: 0.2 });
 
   return (
-    <div ref={itemRef} className="mb-10 pb-10 border-b last:border-0 fade-in-section">
+    <div 
+      ref={ref as React.RefObject<HTMLDivElement>} 
+      className={`mb-8 pb-8 border-b last:border-0 transition-all duration-500 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+    >
       <div className="flex flex-col md:flex-row md:items-start">
         <div className="md:w-1/4 mb-2 md:mb-0">
           <span className="text-sm text-muted-foreground">{date}</span>
@@ -47,12 +31,12 @@ const WritingItem = ({ title, description, link, date, platform }: WritingItemPr
             rel="noopener noreferrer"
             className="group"
           >
-            <h3 className="text-xl font-medium mb-2 group-hover:text-primary transition-colors duration-300 flex items-center">
+            <h3 className="text-lg font-medium mb-2 group-hover:text-primary transition-colors duration-300 flex items-center">
               {title}
               <ExternalLink className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </h3>
           </a>
-          <p className="text-muted-foreground">{description}</p>
+          <p className="text-sm text-muted-foreground">{description}</p>
         </div>
       </div>
     </div>
@@ -60,32 +44,17 @@ const WritingItem = ({ title, description, link, date, platform }: WritingItemPr
 };
 
 const Writing = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+  const { ref: sectionRef, hasIntersected } = useIntersectionObserver();
 
   return (
     <section id="writing" className="py-20">
       <div className="container-width">
-        <h2 ref={sectionRef} className="text-3xl md:text-4xl font-serif mb-12 fade-in-section">Writing</h2>
+        <h2 
+          ref={sectionRef as React.RefObject<HTMLHeadingElement>} 
+          className={`text-2xl md:text-3xl font-serif mb-12 transition-opacity duration-500 ${hasIntersected ? 'opacity-100' : 'opacity-0'}`}
+        >
+          Writing
+        </h2>
         
         <div className="mt-8">
           <WritingItem 

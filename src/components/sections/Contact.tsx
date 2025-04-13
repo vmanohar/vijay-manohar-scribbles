@@ -1,10 +1,11 @@
 
-import React, { useEffect, useRef, useState } from 'react';
-import { Mail, Github, Linkedin, Twitter } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, Github, Linkedin, Twitter, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const SocialLink = ({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) => {
   return (
@@ -12,11 +13,13 @@ const SocialLink = ({ href, icon, label }: { href: string; icon: React.ReactNode
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-colors duration-300"
+      className="flex flex-col items-center justify-center p-4 rounded-lg hover:bg-secondary/50 transition-colors duration-300"
       aria-label={label}
     >
-      {icon}
-      <span>{label}</span>
+      <div className="p-3 rounded-full bg-secondary/30 mb-2">
+        {icon}
+      </div>
+      <span className="text-sm">{label}</span>
     </a>
   );
 };
@@ -27,27 +30,8 @@ const Contact = () => {
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+  
+  const { ref: sectionRef, hasIntersected } = useIntersectionObserver();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -68,44 +52,48 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-secondary/30">
+    <section id="contact" className="py-20">
       <div className="container-width">
-        <h2 ref={sectionRef} className="text-3xl md:text-4xl font-serif mb-12 fade-in-section">Contact</h2>
+        <h2 
+          ref={sectionRef as React.RefObject<HTMLHeadingElement>} 
+          className={`text-2xl md:text-3xl font-serif mb-12 transition-opacity duration-500 ${hasIntersected ? 'opacity-100' : 'opacity-0'}`}
+        >
+          Contact
+        </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div className="fade-in-section">
+          {/* Social Links */}
+          <div className={`transition-all duration-500 delay-100 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <p className="text-lg mb-8">
-              I'm always open to interesting conversations and collaboration opportunities. 
-              Feel free to reach out through any of the channels below.
+              I'm always open to interesting conversations and collaboration opportunities.
             </p>
             
-            <div className="space-y-4 mt-8">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
               <SocialLink 
                 href="mailto:hello@vijaymanohar.com" 
-                icon={<Mail className="w-5 h-5" />} 
-                label="hello@vijaymanohar.com"
+                icon={<Mail className="w-6 h-6" />} 
+                label="Email"
               />
               <SocialLink 
                 href="https://github.com/vijaymanohar" 
-                icon={<Github className="w-5 h-5" />} 
-                label="github.com/vijaymanohar"
+                icon={<Github className="w-6 h-6" />} 
+                label="GitHub"
               />
               <SocialLink 
                 href="https://linkedin.com/in/vijaymanohar" 
-                icon={<Linkedin className="w-5 h-5" />} 
-                label="linkedin.com/in/vijaymanohar"
+                icon={<Linkedin className="w-6 h-6" />} 
+                label="LinkedIn"
               />
               <SocialLink 
                 href="https://twitter.com/vijay_manohar" 
-                icon={<Twitter className="w-5 h-5" />} 
-                label="twitter.com/vijay_manohar"
+                icon={<Twitter className="w-6 h-6" />} 
+                label="Twitter"
               />
             </div>
           </div>
           
           {/* Contact Form */}
-          <div className="fade-in-section">
+          <div className={`transition-all duration-500 delay-200 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <Input
@@ -133,15 +121,16 @@ const Contact = () => {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   required
-                  className="bg-background min-h-[150px]"
+                  className="bg-background min-h-[120px]"
                 />
               </div>
               <Button 
                 type="submit" 
                 disabled={loading}
-                className="w-full"
+                className="w-full flex items-center justify-center gap-2"
               >
                 {loading ? "Sending..." : "Send Message"}
+                <Send className="w-4 h-4" />
               </Button>
               <p className="text-xs text-center text-muted-foreground mt-4">
                 This is a demo form. In a real implementation, you would need a backend service to handle form submissions.
