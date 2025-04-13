@@ -1,8 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
-import { Moon, Sun } from 'lucide-react';
 import { useTheme } from '@/hooks/useTheme';
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,24 +41,26 @@ const Navbar = () => {
           <a href="#about" className="text-sm hover:text-primary transition-colors">About</a>
           <a href="#writing" className="text-sm hover:text-primary transition-colors">Writing</a>
           <a href="#contact" className="text-sm hover:text-primary transition-colors">Contact</a>
-          <button 
-            className="p-2 rounded-full hover:bg-secondary transition-colors"
-            onClick={toggleTheme}
-            aria-label="Toggle dark mode"
-          >
-            {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </button>
+          <div className="flex items-center space-x-2">
+            <Label htmlFor="dark-mode">Dark Mode</Label>
+            <Switch
+              id="dark-mode"
+              checked={theme === 'dark'}
+              onCheckedChange={toggleTheme}
+            />
+          </div>
         </nav>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center space-x-4">
-          <button 
-            className="p-2 rounded-full hover:bg-secondary transition-colors"
-            onClick={toggleTheme}
-            aria-label="Toggle dark mode"
-          >
-            {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </button>
+          <div className="flex items-center space-x-2">
+            <Label htmlFor="dark-mode-mobile" className="sr-only">Dark Mode</Label>
+            <Switch
+              id="dark-mode-mobile"
+              checked={theme === 'dark'}
+              onCheckedChange={toggleTheme}
+            />
+          </div>
           <button 
             className="flex flex-col space-y-1.5 p-2"
             onClick={toggleMobileMenu}
