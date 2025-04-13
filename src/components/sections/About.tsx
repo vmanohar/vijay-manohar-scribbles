@@ -52,7 +52,7 @@ const About = () => {
             I'm especially into transparent, tested CPG brands and rethinking education to actually prepare the next generation through new kinds of schools.
           </p>
           <p className={`text-lg transition-all duration-500 delay-300 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            I'm into HYROX, bodybuilding, and multi-day hikes that leave me questioning my life choices. I meditate daily and spend a lot of time exploring mindfulness and how to stay grounded.
+            I'm into HYROX, bodybuilding, and multi-day hikes that leave me questioning my life choices. I meditate and spend a lot of time exploring mindfulness and how to stay grounded.
           </p>
           <p className={`text-lg transition-all duration-500 delay-400 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             I used to be a full-time nomad. Now I'm settled in Austin, TX and always on the lookout for great products. I get weirdly excited when a brand just gets it right.

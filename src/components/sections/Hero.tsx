@@ -37,7 +37,7 @@ const Hero = () => {
         </h1>
         
         <p className="text-sm md:text-base text-muted-foreground mb-4 max-w-md animate-fade-in">
-          Into mindfulness, movement, and figuring out better ways to eat, learn, and live.
+          Founder, friend, brother, son. Into movement, mindfulness, and figuring out better ways to consume, create, learn, and live
         </p>
         
         {/* Social Links */}
