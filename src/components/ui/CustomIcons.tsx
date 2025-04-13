@@ -17,3 +17,17 @@ export const Strava: React.FC<{ className?: string }> = ({ className }) => {
     </svg>
   );
 };
+
+// Export custom favicon icon as a component for potential reuse
+export const FaviconIcon: React.FC<{ className?: string }> = ({ className }) => {
+  return (
+    <svg 
+      viewBox="0 0 32 32" 
+      xmlns="http://www.w3.org/2000/svg" 
+      className={className}
+    >
+      <rect width="32" height="32" rx="8" fill="#F9F5FF"/>
+      <path d="M11.208 20L14.672 10.64H17.008L20.472 20H18.328L15.52 12.096H16.128L13.32 20H11.208ZM12.616 17.248V15.52H19.064V17.248H12.616Z" fill="#1A1523" />
+    </svg>
+  );
+};

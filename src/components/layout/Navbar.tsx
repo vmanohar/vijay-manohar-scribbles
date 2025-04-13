@@ -30,7 +30,7 @@ const Navbar = () => {
       <div 
         className={cn(
           "fixed top-4 right-4 z-50 flex items-center space-x-2 p-2 rounded-full bg-background/80 backdrop-blur-md shadow-sm",
-          theme === 'dark' ? "border border-white/20" : ""
+          theme === 'dark' ? "border border-white/50 text-white" : "border"
         )}
       >
         <Switch
@@ -40,7 +40,7 @@ const Navbar = () => {
           aria-label="Toggle dark mode"
         />
         {theme === 'dark' ? 
-          <Moon className="w-5 h-5 text-white" /> : 
+          <Moon className="w-5 h-5" /> : 
           <Sun className="w-5 h-5" />
         }
       </div>
@@ -86,21 +86,28 @@ const Navbar = () => {
           <nav className="container-width flex flex-col space-y-4">
             <a 
               href="#about" 
-              className="text-base py-2 link-hover"
+              className="text-base py-2 underline-link"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               About
             </a>
             <a 
+              href="#now" 
+              className="text-base py-2 underline-link"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Now
+            </a>
+            <a 
               href="#writing" 
-              className="text-base py-2 link-hover"
+              className="text-base py-2 underline-link"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Writing
             </a>
             <a 
               href="#contact" 
-              className="text-base py-2 link-hover"
+              className="text-base py-2 underline-link"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact

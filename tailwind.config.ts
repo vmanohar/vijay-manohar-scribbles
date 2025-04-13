@@ -20,8 +20,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
-				serif: ['Playfair Display', 'serif'],
+				sans: ['Inter', 'IBM Plex Sans', 'sans-serif'],
+				serif: ['Space Grotesk', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -116,6 +116,9 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out forwards',
 				'fade-out': 'fade-out 0.5s ease-out forwards'
+			},
+			letterSpacing: {
+				'widest': '0.15em',
 			}
 		}
 	},

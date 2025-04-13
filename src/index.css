@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -91,6 +91,19 @@
     text-decoration-thickness: 2px;
   }
 
+  .underline-link {
+    @apply relative text-primary hover:text-primary/80;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: all 0.2s ease;
+  }
+  
+  .underline-link:hover {
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+
   .fade-in-section {
     opacity: 0;
     transform: translateY(20px);
@@ -104,5 +117,28 @@
 
   .container-width {
     @apply w-full max-w-4xl mx-auto px-6 md:px-8;
+  }
+  
+  /* Scroll to top button */
+  .scroll-to-top {
+    @apply fixed bottom-6 right-6 bg-background/80 backdrop-blur-sm shadow-md rounded-full p-2 border transition-all duration-300 opacity-0 pointer-events-none z-50;
+  }
+  
+  .scroll-to-top.visible {
+    @apply opacity-100 pointer-events-auto;
+  }
+  
+  .scroll-to-top:hover {
+    @apply transform -translate-y-1;
+  }
+  
+  /* Enhanced typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-wide;
+  }
+  
+  h2 {
+    @apply tracking-wide;
+    letter-spacing: 0.03em;
   }
 }

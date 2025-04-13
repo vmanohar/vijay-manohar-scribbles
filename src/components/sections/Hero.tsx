@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowDown, Mail, Github, Linkedin, Twitter } from 'lucide-react';
+import { ArrowDown, Mail, Github, Linkedin, Twitter, BookOpen } from 'lucide-react';
 import { Strava } from '../ui/CustomIcons';
 
 const SocialLink = ({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) => {
@@ -32,7 +32,7 @@ const Hero = () => {
           />
         </div>
         
-        <h1 className="text-xl md:text-2xl font-serif mb-2 animate-fade-in">
+        <h1 className="text-xl md:text-2xl font-serif mb-2 animate-fade-in tracking-wide">
           Vijay Manohar
         </h1>
         
@@ -69,13 +69,23 @@ const Hero = () => {
           />
         </div>
         
-        <a 
-          href="#about" 
-          className="flex items-center justify-center w-7 h-7 rounded-full border animate-fade-in hover:border-primary transition-colors duration-300 mt-2"
-          aria-label="Scroll to About section"
-        >
-          <ArrowDown className="w-3 h-3" />
-        </a>
+        <div className="flex space-x-4 mt-6">
+          <a 
+            href="#about" 
+            className="flex items-center justify-center rounded-md px-4 py-2 border text-sm hover:bg-secondary/50 transition-colors duration-300"
+          >
+            <ArrowDown className="w-3 h-3 mr-2" />
+            About me
+          </a>
+          
+          <a 
+            href="#writing" 
+            className="flex items-center justify-center rounded-md px-4 py-2 border text-sm hover:bg-secondary/50 transition-colors duration-300"
+          >
+            <BookOpen className="w-3 h-3 mr-2" />
+            My writing
+          </a>
+        </div>
       </div>
     </section>
   );
