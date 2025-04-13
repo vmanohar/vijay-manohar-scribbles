@@ -29,7 +29,8 @@ const Navbar = () => {
       {/* Dark mode toggle - Always visible */}
       <div 
         className={cn(
-          "fixed top-4 right-4 z-50 flex items-center space-x-2 p-2 rounded-full bg-background/80 backdrop-blur-md shadow-sm"
+          "fixed top-4 right-4 z-50 flex items-center space-x-2 p-2 rounded-full bg-background/80 backdrop-blur-md shadow-sm",
+          theme === 'dark' ? "border border-white/20" : ""
         )}
       >
         <Switch
@@ -38,7 +39,10 @@ const Navbar = () => {
           onCheckedChange={toggleTheme}
           aria-label="Toggle dark mode"
         />
-        {theme === 'dark' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+        {theme === 'dark' ? 
+          <Moon className="w-5 h-5 text-white" /> : 
+          <Sun className="w-5 h-5" />
+        }
       </div>
 
       {/* Mobile Nav */}

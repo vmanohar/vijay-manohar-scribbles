@@ -1,6 +1,23 @@
 
 import React from 'react';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Mail, Github, Linkedin, Twitter } from 'lucide-react';
+import { Strava } from '../ui/CustomIcons';
+
+const SocialLink = ({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) => {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-secondary/50 transition-colors duration-300"
+      aria-label={label}
+    >
+      <div className="p-2 rounded-full bg-secondary/30 hover:bg-primary/10 transition-colors duration-300">
+        {icon}
+      </div>
+    </a>
+  );
+};
 
 const Hero = () => {
   return (
@@ -23,9 +40,38 @@ const Hero = () => {
           Writer, creator, and curious mind exploring the intersections of technology and everyday life.
         </p>
         
+        {/* Social Links */}
+        <div className="flex space-x-3 mt-4 mb-6 animate-fade-in">
+          <SocialLink 
+            href="mailto:hello@vijaymanohar.com" 
+            icon={<Mail className="w-5 h-5" />} 
+            label="Email"
+          />
+          <SocialLink 
+            href="https://github.com/vijaymanohar" 
+            icon={<Github className="w-5 h-5" />} 
+            label="GitHub"
+          />
+          <SocialLink 
+            href="https://linkedin.com/in/vijaymanohar" 
+            icon={<Linkedin className="w-5 h-5" />} 
+            label="LinkedIn"
+          />
+          <SocialLink 
+            href="https://twitter.com/vijay_manohar" 
+            icon={<Twitter className="w-5 h-5" />} 
+            label="Twitter"
+          />
+          <SocialLink 
+            href="https://www.strava.com/athletes/vijaymanohar" 
+            icon={<Strava className="w-5 h-5" />} 
+            label="Strava"
+          />
+        </div>
+        
         <a 
           href="#about" 
-          className="flex items-center justify-center w-7 h-7 rounded-full border animate-fade-in hover:border-primary transition-colors duration-300 mt-6"
+          className="flex items-center justify-center w-7 h-7 rounded-full border animate-fade-in hover:border-primary transition-colors duration-300 mt-2"
           aria-label="Scroll to About section"
         >
           <ArrowDown className="w-3 h-3" />
