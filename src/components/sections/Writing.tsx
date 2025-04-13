@@ -31,7 +31,7 @@ const WritingItem = ({ title, description, link, date, platform }: WritingItemPr
             rel="noopener noreferrer"
             className="group"
           >
-            <h3 className="text-lg font-medium mb-2 group-hover:text-primary transition-colors duration-300 flex items-center">
+            <h3 className="text-lg font-medium mb-2 group-hover:text-accent transition-colors duration-300 flex items-center">
               {title}
               <ExternalLink className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </h3>
@@ -51,45 +51,24 @@ const Writing = () => {
       <div className="container-width">
         <h2 
           ref={sectionRef as React.RefObject<HTMLHeadingElement>} 
-          className={`text-2xl md:text-3xl font-serif mb-8 transition-opacity duration-500 ${hasIntersected ? 'opacity-100' : 'opacity-0'}`}
+          className={`text-2xl md:text-3xl font-sohne mb-8 transition-opacity duration-500 ${hasIntersected ? 'opacity-100' : 'opacity-0'}`}
         >
           Writing
         </h2>
         
         <div className="mt-6">
           <WritingItem 
-            title="The Slow Internet Movement" 
-            description="Exploring the growing desire for more thoughtful, less overwhelming digital experiences."
-            link="https://substack.com" 
-            date="May 2024"
+            title="Sprints and fun challenges rather than goals" 
+            description="How short-term challenges can be more effective and enjoyable than traditional goal-setting."
+            link="https://vijaymanohar.substack.com/p/sprints-and-fun-challenges-rather" 
+            date="March 2024"
             platform="Substack"
           />
           <WritingItem 
-            title="Digital Minimalism in Practice" 
-            description="How reducing your digital footprint can lead to more meaningful technology use."
-            link="https://medium.com" 
-            date="February 2024"
-            platform="Medium"
-          />
-          <WritingItem 
-            title="The Hidden Costs of Convenience Apps" 
-            description="An examination of how our increasing reliance on convenience applications is reshaping urban economies."
-            link="https://substack.com" 
-            date="November 2023"
-            platform="Substack"
-          />
-          <WritingItem 
-            title="Long-form Reading in the Age of Shorts" 
-            description="Why deep reading matters more than ever in an era dominated by bite-sized content consumption."
-            link="https://medium.com" 
-            date="September 2023"
-            platform="Medium"
-          />
-          <WritingItem 
-            title="Rediscovering Local Community Through Technology" 
-            description="How digital tools can strengthen rather than replace local connections and community engagement."
-            link="https://substack.com" 
-            date="July 2023"
+            title="Questions I'm asking myself at this moment" 
+            description="A reflection on personal inquiries that guide our thinking and growth."
+            link="https://vijaymanohar.substack.com/p/questions-im-asking-myself-at-this-90b" 
+            date="January 2024"
             platform="Substack"
           />
         </div>

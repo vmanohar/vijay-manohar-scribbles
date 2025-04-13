@@ -20,8 +20,9 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Inter', 'IBM Plex Sans', 'sans-serif'],
-				serif: ['Space Grotesk', 'serif'],
+				// Using Space Grotesk as a stand-in for Söhne for headings
+				'sohne': ['Space Grotesk', 'sans-serif'],
+				'body': ['Inter', 'IBM Plex Sans', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -29,6 +30,11 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				accent: {
+					DEFAULT: '#004225',
+					hover: '#005a32',
+					light: 'rgba(0, 66, 37, 0.1)',
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -44,10 +50,6 @@ export default {
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',
 					foreground: 'hsl(var(--muted-foreground))'
-				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',

@@ -31,7 +31,7 @@ const About = () => {
       <div className="container-width">
         <h2 
           ref={sectionRef as React.RefObject<HTMLHeadingElement>}
-          className={`text-2xl md:text-3xl font-serif mb-8 transition-opacity duration-500 ${hasIntersected ? 'opacity-100' : 'opacity-0'}`}
+          className={`text-2xl md:text-3xl font-sohne mb-8 transition-opacity duration-500 ${hasIntersected ? 'opacity-100' : 'opacity-0'}`}
         >
           About Me
         </h2>
@@ -47,7 +47,7 @@ const About = () => {
           </p>
         </div>
         
-        <h3 className={`text-xl font-serif mb-6 transition-all duration-500 delay-300 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <h3 className={`text-xl font-sohne mb-6 transition-all duration-500 delay-300 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           Timeline
         </h3>
         
@@ -75,30 +75,30 @@ const About = () => {
         </div>
         
         <div className={`mt-8 transition-all duration-500 delay-400 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h3 className="text-xl font-serif mb-4">Interests & Values</h3>
+          <h3 className="text-xl font-sohne mb-4">Interests & Values</h3>
           <ul className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-4">
             <li className="flex items-start">
-              <span className="text-primary mr-2">•</span>
+              <span className="text-accent mr-2">•</span>
               <span>Thoughtful <a href="#" className="link-hover">technology</a></span>
             </li>
             <li className="flex items-start">
-              <span className="text-primary mr-2">•</span>
+              <span className="text-accent mr-2">•</span>
               <span>Environmental care</span>
             </li>
             <li className="flex items-start">
-              <span className="text-primary mr-2">•</span>
+              <span className="text-accent mr-2">•</span>
               <span>Long-form <a href="#" className="link-hover">stories</a></span>
             </li>
             <li className="flex items-start">
-              <span className="text-primary mr-2">•</span>
+              <span className="text-accent mr-2">•</span>
               <span>Cultural exploration</span>
             </li>
             <li className="flex items-start">
-              <span className="text-primary mr-2">•</span>
+              <span className="text-accent mr-2">•</span>
               <span>Continuous learning</span>
             </li>
             <li className="flex items-start">
-              <span className="text-primary mr-2">•</span>
+              <span className="text-accent mr-2">•</span>
               <span><a href="#" className="link-hover">Community</a> building</span>
             </li>
           </ul>

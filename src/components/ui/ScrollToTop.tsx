@@ -35,7 +35,7 @@ const ScrollToTop = () => {
       )}
       aria-label="Scroll to top"
     >
-      <ArrowUp className="w-5 h-5" />
+      <ArrowUp className="w-5 h-5 hover:text-accent transition-colors duration-300" />
     </button>
   );
 };
