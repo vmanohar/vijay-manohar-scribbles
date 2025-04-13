@@ -5,8 +5,6 @@ import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
 import About from '@/components/sections/About';
 import Writing from '@/components/sections/Writing';
-import Contact from '@/components/sections/Contact';
-import NowSection from '@/components/sections/NowSection';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import { useTheme } from '@/hooks/useTheme';
 
@@ -64,9 +62,12 @@ const Index = () => {
       <Navbar />
       <Hero />
       <About />
-      <NowSection />
       <Writing />
-      <Contact />
+      <div className="py-8 text-center text-sm text-muted-foreground border-t">
+        <div className="container-width">
+          <p>Caffeinated into existence at <a href="https://www.palominocoffee.com/" target="_blank" rel="noopener noreferrer" className="link-hover">Palomino Cafe</a> in Austin, TX</p>
+        </div>
+      </div>
       <Footer />
       <ScrollToTop />
     </main>

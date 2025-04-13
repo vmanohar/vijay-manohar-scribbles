@@ -93,6 +93,10 @@
     text-decoration: underline;
   }
   
+  .dark .link-hover:hover {
+    @apply text-[#FFD580];
+  }
+  
   .link-hover:hover {
     text-decoration-thickness: 2px;
     @apply text-accent;
@@ -104,6 +108,10 @@
     text-decoration-thickness: 1px;
     text-underline-offset: 2px;
     transition: all 0.2s ease;
+  }
+  
+  .dark .underline-link:hover {
+    @apply text-[#FFD580];
   }
   
   .underline-link:hover {
@@ -136,7 +144,15 @@
   }
   
   .scroll-to-top:hover {
-    @apply transform -translate-y-1 border-accent;
+    @apply transform -translate-y-1;
+  }
+  
+  .dark .scroll-to-top:hover {
+    @apply border-[#FFD580];
+  }
+  
+  .dark .action-button:hover {
+    @apply bg-[#FFD580] border-[#FFD580] text-gray-900;
   }
   
   /* Enhanced typography */
@@ -160,6 +176,10 @@
     transform: translateY(-2px);
   }
   
+  .dark .social-link:hover {
+    @apply text-[#FFD580];
+  }
+  
   /* Action buttons */
   .action-button {
     @apply bg-transparent border border-primary text-primary px-4 py-2 rounded-md transition-all duration-300;
@@ -172,5 +192,26 @@
   /* Dark mode toggle improvements */
   .dark .dark-mode-toggle {
     @apply border border-white/30 text-white;
+  }
+  
+  /* Quote styling for the quotes page */
+  .quote-card {
+    @apply p-6 mb-8 bg-secondary/50 rounded-lg transition-all duration-300;
+  }
+  
+  .dark .quote-card {
+    @apply bg-secondary/30 hover:bg-secondary/40;
+  }
+  
+  .quote-card:hover {
+    @apply shadow-md transform -translate-y-1;
+  }
+  
+  .quote-text {
+    @apply text-lg leading-relaxed mb-4 font-body;
+  }
+  
+  .quote-author {
+    @apply text-right text-sm text-muted-foreground italic;
   }
 }

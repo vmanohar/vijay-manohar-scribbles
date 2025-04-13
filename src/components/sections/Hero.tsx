@@ -23,9 +23,9 @@ const Hero = () => {
   return (
     <section id="top" className="min-h-[80vh] flex flex-col justify-center items-center pt-10">
       <div className="container-width flex flex-col items-center text-center">
-        <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden mb-4 animate-fade-in border-2 border-accent">
+        <div className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden mb-6 animate-fade-in border-2 border-accent shadow-lg">
           <img 
-            src="/lovable-uploads/9e69ff1f-bf26-4c1c-a446-52be25930267.png" 
+            src="/lovable-uploads/c7988759-4b7b-425b-9aa2-1262b7455fa6.png" 
             alt="Vijay Manohar" 
             className="w-full h-full object-cover"
             loading="eager"

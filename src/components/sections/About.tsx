@@ -38,12 +38,19 @@ const About = () => {
         
         <div className="space-y-6 mb-12">
           <p className={`text-lg transition-all duration-500 delay-100 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            I'm Vijay, a writer and curious observer with interests spanning technology, culture, and human behavior. 
-            My work explores how we interact with the <a href="#" className="link-hover">digital world</a> and how those interactions shape our lives.
+            I care about clean inputs—whether that's what goes into your body, your routine, or your thinking. That means food and supplements that are actually tested and transparent, not just well-branded. Systems that reduce friction. And mental frameworks that help you move through life with more clarity and less noise.
           </p>
           <p className={`text-lg transition-all duration-500 delay-200 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            When I'm not writing, you might find me hiking in the mountains, experimenting with new recipes, 
-            or losing myself in a <a href="#" className="link-hover">good book</a>. I believe in continuous learning and approaching life with an open mind.
+            I'm especially into transparent, tested CPG brands and rethinking education to actually prepare the next generation through new kinds of schools.
+          </p>
+          <p className={`text-lg transition-all duration-500 delay-300 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            I'm into HYROX, bodybuilding, and multi-day hikes that leave me questioning my life choices. I meditate daily and spend a lot of time exploring mindfulness and how to stay grounded.
+          </p>
+          <p className={`text-lg transition-all duration-500 delay-400 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            I used to be a full-time nomad. Now I'm settled in Austin, TX and always on the lookout for great products. I get weirdly excited when a brand just gets it right.
+          </p>
+          <p className={`text-lg transition-all duration-500 delay-500 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            Also, I tried stand-up once. It was chaotic and great. I'd do it again.
           </p>
         </div>
         
@@ -53,53 +60,53 @@ const About = () => {
         
         <div className="mt-6">
           <TimelineItem 
-            year="2023" 
-            title="Started Independent Writing" 
-            description="Launched my own writing platform focused on the intersection of technology and everyday life."
+            year="2024" 
+            title="Light Labs, Co-founder" 
+            description="My life's work -- building a healthier food system through lab testing."
           />
           <TimelineItem 
-            year="2020 - 2023" 
-            title="Senior Content Creator at TechVision" 
-            description="Led content strategy and created in-depth analyses of emerging technology trends."
+            year="2023 - 2024" 
+            title="Sabbatical" 
+            description="Chilled a lot, moved to Austin, became a decent chef, and a lot of experimenting on what was next (along with a healthy dose of existential dread)."
           />
           <TimelineItem 
-            year="2018 - 2020" 
-            title="Research Contributor" 
-            description="Contributed research and insights to various publications on digital transformation."
+            year="2018 - 2023" 
+            title="Samsara, growth and GTM" 
+            description="The best education I could have asked for, along for the ride from startup to IPO ($IOT). Lived all over LATAM and Europe."
           />
           <TimelineItem 
-            year="2016" 
-            title="MSc in Digital Society" 
-            description="Explored how technology shapes social structures and human behavior."
+            year="2013 - 2017" 
+            title="University of Texas at Austin" 
+            description="Electrical and Computer Engineering, B.S. Made lifelong friends, studied a lot, realized I didn't want to be an engineer."
           />
         </div>
         
-        <div className={`mt-8 transition-all duration-500 delay-400 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`mt-10 transition-all duration-500 delay-400 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h3 className="text-xl font-sohne mb-4">Interests & Values</h3>
-          <ul className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-4">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
             <li className="flex items-start">
               <span className="text-accent mr-2">•</span>
-              <span>Thoughtful <a href="#" className="link-hover">technology</a></span>
+              <span>Transparent food systems – incentive alignment within our food system and consumers</span>
             </li>
             <li className="flex items-start">
               <span className="text-accent mr-2">•</span>
-              <span>Environmental care</span>
+              <span>Meditation & mindfulness – daily practice, mental clarity, and awareness in how I show up</span>
             </li>
             <li className="flex items-start">
               <span className="text-accent mr-2">•</span>
-              <span>Long-form <a href="#" className="link-hover">stories</a></span>
+              <span>Rooted living – ancestral habits, shared spaces, and deeper connection to people and place</span>
             </li>
             <li className="flex items-start">
               <span className="text-accent mr-2">•</span>
-              <span>Cultural exploration</span>
+              <span>Self-experimentation (n=1) – testing habits, routines, and tools to see what actually works</span>
             </li>
             <li className="flex items-start">
               <span className="text-accent mr-2">•</span>
-              <span>Continuous learning</span>
+              <span>Physical challenges – HYROX, bodybuilding, and multi-day hikes</span>
             </li>
             <li className="flex items-start">
               <span className="text-accent mr-2">•</span>
-              <span><a href="#" className="link-hover">Community</a> building</span>
+              <span>Alternative education – building models that teach real skills, curiosity, and self-awareness</span>
             </li>
           </ul>
         </div>

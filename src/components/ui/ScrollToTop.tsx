@@ -2,9 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useTheme } from '@/hooks/useTheme';
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { theme } = useTheme();
 
   const toggleVisibility = () => {
     if (window.pageYOffset > 300) {
@@ -31,11 +33,15 @@ const ScrollToTop = () => {
       onClick={scrollToTop}
       className={cn(
         'scroll-to-top',
-        isVisible ? 'visible' : ''
+        isVisible ? 'visible' : '',
+        theme === 'dark' ? 'border-[#FFD580]/50 hover:border-[#FFD580]' : ''
       )}
       aria-label="Scroll to top"
     >
-      <ArrowUp className="w-5 h-5 hover:text-accent transition-colors duration-300" />
+      <ArrowUp className={cn(
+        "w-5 h-5 transition-colors duration-300",
+        theme === 'dark' ? 'hover:text-[#FFD580]' : 'hover:text-accent'
+      )} />
     </button>
   );
 };

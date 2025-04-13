@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { useTheme } from '@/hooks/useTheme';
 import { Switch } from "@/components/ui/switch";
 import { Moon, Sun } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -92,26 +93,19 @@ const Navbar = () => {
               About
             </a>
             <a 
-              href="#now" 
-              className="text-base py-2 underline-link"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Now
-            </a>
-            <a 
               href="#writing" 
               className="text-base py-2 underline-link"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Writing
             </a>
-            <a 
-              href="#contact" 
+            <Link 
+              to="/quotes" 
               className="text-base py-2 underline-link"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Contact
-            </a>
+              Quotes
+            </Link>
           </nav>
         </div>
       </header>
