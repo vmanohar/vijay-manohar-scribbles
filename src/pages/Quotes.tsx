@@ -197,10 +197,6 @@ A friend? What is a friend? Just one, I repeat, with whom you dare to be yoursel
             >
               Quotes I Return To
             </h1>
-            
-            <p className="text-lg text-muted-foreground mb-12">
-              A collection of words that have stayed with me over the years — guideposts, reminders, and little fragments of wisdom.
-            </p>
           </div>
           
           <div>

@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -201,6 +202,11 @@
   /* Dark mode toggle improvements */
   .dark .dark-mode-toggle {
     @apply border border-white/30 text-white;
+  }
+  
+  /* Custom theme toggle styling */
+  [data-state="checked"].switch-thumb {
+    transform: translateX(1rem);
   }
   
   /* Quote styling for the quotes page */

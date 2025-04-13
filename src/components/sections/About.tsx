@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
@@ -44,23 +43,21 @@ const About = () => {
           About Me
         </h2>
         
-        <div className="space-y-6 mb-12">
-          <p className={`text-lg transition-all duration-500 delay-100 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            I care about clean inputs—whether that's what goes into your body, your routine, or your thinking. That means food and supplements that are actually tested and transparent, not just well-branded. Systems that reduce friction. And mental models that help you move through life with more clarity and less noise.
-          </p>
-          <p className={`text-lg transition-all duration-500 delay-200 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            I'm especially into transparent, tested CPG brands and rethinking education to actually prepare the next generation through new kinds of schools.
-          </p>
-          <p className={`text-lg transition-all duration-500 delay-300 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            I'm into HYROX, bodybuilding, and multi-day hikes that leave me questioning my life choices. I meditate and spend a lot of time exploring mindfulness and how to stay grounded.
-          </p>
-          <p className={`text-lg transition-all duration-500 delay-400 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            I used to be a full-time nomad. Now I'm settled in Austin, TX and always on the lookout for great products. I get weirdly excited when a brand just gets it right.
-          </p>
-          <p className={`text-lg transition-all duration-500 delay-500 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            Also, I tried stand-up once. It was chaotic and great. I'd do it again.
-          </p>
-        </div>
+        <p className={`text-lg transition-all duration-500 delay-100 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          I care about clean inputs—whether that's what goes into your body, your routine, or your thinking. That means food and supplements that are actually tested and transparent, not just well-branded. Systems that reduce friction. And mental models that help you move through life with more clarity and less noise.
+        </p>
+        <p className={`text-lg transition-all duration-500 delay-200 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          I'm especially into transparent, tested CPG brands and rethinking education to actually prepare the next generation through new kinds of schools.
+        </p>
+        <p className={`text-lg transition-all duration-500 delay-300 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          I'm into HYROX, bodybuilding, and multi-day hikes that leave me questioning my life choices. I meditate and spend a lot of time exploring mindfulness and how to stay grounded.
+        </p>
+        <p className={`text-lg transition-all duration-500 delay-400 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          I used to be a full-time nomad. Now I'm settled in Austin, TX and always on the lookout for great products. I get weirdly excited when a brand just gets it right.
+        </p>
+        <p className={`text-lg transition-all duration-500 delay-500 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          Also, I tried stand-up once. It was chaotic and great. I'd do it again.
+        </p>
         
         <h3 className={`text-xl font-sohne mb-6 transition-all duration-500 delay-300 ${hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           Timeline
@@ -70,7 +67,7 @@ const About = () => {
           <TimelineItem 
             year="2024" 
             title="Light Labs, Co-founder" 
-            description="My life's work -- building a healthier food system through lab testing."
+            description="Building a healthier food system through lab testing."
             link="https://lightlabs.com"
           />
           <TimelineItem 

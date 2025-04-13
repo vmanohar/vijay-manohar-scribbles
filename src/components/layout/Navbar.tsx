@@ -1,8 +1,10 @@
+
 import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { useTheme } from '@/hooks/useTheme';
 import { Link } from 'react-router-dom';
 import { Switch } from "@/components/ui/switch";
+import { Sun, Moon } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,7 +27,7 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Regular switch for dark mode toggle - Always visible */}
+      {/* Enhanced toggle for dark mode - Always visible */}
       <div 
         className={cn(
           "fixed top-4 right-4 z-50 p-2 rounded-full bg-background/80 backdrop-blur-md shadow-md transition-all duration-200",
@@ -35,14 +37,19 @@ const Navbar = () => {
         )}
       >
         <div className="flex items-center gap-2">
-          <span className="text-xs font-medium">
-            {theme === 'light' ? 'Light' : 'Dark'}
-          </span>
           <Switch
             checked={theme === 'dark'}
             onCheckedChange={toggleTheme}
             aria-label="Toggle dark mode"
+            className="data-[state=checked]:bg-slate-800 data-[state=unchecked]:bg-amber-100"
           />
+          <span className="flex items-center justify-center w-5 h-5">
+            {theme === 'light' ? (
+              <Sun className="h-4 w-4 text-amber-500" />
+            ) : (
+              <Moon className="h-4 w-4 text-blue-200" />
+            )}
+          </span>
         </div>
       </div>
 
