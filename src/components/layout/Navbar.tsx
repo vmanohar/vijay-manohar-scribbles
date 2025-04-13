@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { useTheme } from '@/hooks/useTheme';
 import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
+import { Moon, Sun } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,12 +27,12 @@ const Navbar = () => {
   return (
     <header 
       className={cn(
-        "fixed top-0 right-0 z-50 transition-all duration-300 md:w-auto md:left-auto",
+        "fixed top-0 right-0 z-50 transition-all duration-300 md:w-auto md:left-auto hidden", // Added hidden for desktop
         isScrolled ? "bg-background/80 backdrop-blur-md py-3 shadow-sm" : "bg-transparent py-4"
       )}
     >
       <div className="container-width flex justify-end items-center md:px-4">
-        {/* Dark mode toggle is always visible */}
+        {/* Dark mode toggle */}
         <div className="hidden md:flex items-center space-x-2 mr-4">
           <Switch
             id="dark-mode"
@@ -40,6 +40,7 @@ const Navbar = () => {
             onCheckedChange={toggleTheme}
             aria-label="Toggle dark mode"
           />
+          {theme === 'dark' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
         </div>
 
         {/* Mobile Menu Button */}
@@ -51,6 +52,7 @@ const Navbar = () => {
               onCheckedChange={toggleTheme}
               aria-label="Toggle dark mode"
             />
+            {theme === 'dark' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
           </div>
           <button 
             className="flex flex-col space-y-1.5 p-2"
@@ -83,21 +85,21 @@ const Navbar = () => {
         <nav className="container-width flex flex-col space-y-4">
           <a 
             href="#about" 
-            className="text-base py-2"
+            className="text-base py-2 link-hover"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             About
           </a>
           <a 
             href="#writing" 
-            className="text-base py-2"
+            className="text-base py-2 link-hover"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Writing
           </a>
           <a 
             href="#contact" 
-            className="text-base py-2"
+            className="text-base py-2 link-hover"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Contact
